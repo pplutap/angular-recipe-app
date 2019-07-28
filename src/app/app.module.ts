@@ -9,6 +9,9 @@ import {SharedModule} from "./shared/shared.module";
 import {CoreModule} from "./core.module";
 import {LoggingService} from "./logging.service";
 
+import {StoreModule} from "@ngrx/store";
+import * as fromApp from './store/app.reducer';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,6 +21,7 @@ import {LoggingService} from "./logging.service";
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    StoreModule.forRoot(fromApp.appReducer),
     SharedModule,
     CoreModule
   ],
